@@ -1,7 +1,7 @@
 [package]
 name = "rwt-novel-agent"
 version = "0.1.0"
-description = "RwtNovelAgent - AI 小说创作桌面端"
+description = "NovelWritingAgent - 本地优先的 AI 小说创作桌面端"
 authors = ["ruiweitang"]
 edition = "2021"
 

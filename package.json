@@ -1,7 +1,8 @@
 {
-  "name": "rwt-novel-agent",
+  "name": "novel-writing-agent",
   "private": true,
   "version": "0.1.0",
+  "description": "NovelWritingAgent - 本地优先的 AI 小说创作桌面端 / A local-first AI novel-writing desktop studio",
   "type": "module",
   "scripts": {
     "dev": "vite",

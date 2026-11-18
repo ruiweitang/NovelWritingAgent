@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "RwtNovelAgent",
+  "productName": "NovelWritingAgent",
   "version": "0.1.0",
   "identifier": "com.rwt.novelagent",
   "build": {
@@ -13,7 +13,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "RwtNovelAgent",
+        "title": "NovelWritingAgent",
         "width": 1280,
         "height": 800,
         "minWidth": 1024,
