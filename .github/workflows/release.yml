@@ -21,7 +21,7 @@ jobs:
             target: universal-apple-darwin
           # Windows：产出 .msi 与 .exe(NSIS)
           - platform: windows-latest
-            target: x64
+            target: x86_64-pc-windows-msvc
 
     runs-on: ${{ matrix.platform }}
     steps:
