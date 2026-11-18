@@ -1,0 +1,194 @@
+/**
+ * 通用过渡与关键帧动画：视图切换、弹窗、Toast、骨架屏、流式光标、完成对勾
+ */
+
+/* 视图切换：淡入 + 上滑 */
+.view-enter-active {
+  transition: opacity var(--dur-base) var(--ease-apple),
+    transform var(--dur-base) var(--ease-apple);
+}
+.view-leave-active {
+  transition: opacity var(--dur-fast) var(--ease-apple),
+    transform var(--dur-fast) var(--ease-apple);
+}
+.view-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.view-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+/* 弹窗：缩放 + 淡入（苹果弹性曲线） */
+.modal-enter-active {
+  transition: opacity var(--dur-slow) var(--ease-apple);
+}
+.modal-enter-active .modal-card {
+  transition: transform var(--dur-slow) var(--ease-apple),
+    opacity var(--dur-slow) var(--ease-apple);
+}
+.modal-leave-active {
+  transition: opacity var(--dur-fast) var(--ease-apple);
+}
+.modal-leave-active .modal-card {
+  transition: transform var(--dur-fast) var(--ease-apple),
+    opacity var(--dur-fast) var(--ease-apple);
+}
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+}
+.modal-enter-from .modal-card {
+  transform: scale(0.94) translateY(12px);
+  opacity: 0;
+}
+.modal-leave-to .modal-card {
+  transform: scale(0.97);
+  opacity: 0;
+}
+
+/* Toast：顶部滑入滑出 */
+.toast-enter-active {
+  transition: opacity var(--dur-slow) var(--ease-apple),
+    transform var(--dur-slow) var(--ease-apple);
+}
+.toast-leave-active {
+  transition: opacity var(--dur-base) var(--ease-apple),
+    transform var(--dur-base) var(--ease-apple);
+}
+.toast-enter-from {
+  opacity: 0;
+  transform: translateY(-16px) scale(0.95);
+}
+.toast-leave-to {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.97);
+}
+.toast-move {
+  transition: transform var(--dur-base) var(--ease-apple);
+}
+
+/* 列表项过渡 */
+.list-enter-active,
+.list-leave-active {
+  transition: opacity var(--dur-base) var(--ease-apple),
+    transform var(--dur-base) var(--ease-apple);
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.list-leave-active {
+  position: absolute;
+}
+.list-move {
+  transition: transform var(--dur-base) var(--ease-apple);
+}
+
+/* 面板展开 */
+.expand-enter-active,
+.expand-leave-active {
+  transition: opacity var(--dur-base) var(--ease-apple),
+    transform var(--dur-base) var(--ease-apple);
+}
+.expand-enter-from,
+.expand-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+/* 加载骨架 shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+.skeleton {
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    var(--bg-input) 25%,
+    var(--bg-hover) 40%,
+    var(--bg-input) 55%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+
+/* 流式输出闪烁光标 */
+@keyframes caret-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  95% {
+    opacity: 0;
+  }
+}
+.stream-caret::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  margin-left: 2px;
+  vertical-align: -0.15em;
+  background: var(--accent);
+  animation: caret-blink 1s infinite;
+}
+
+/* 环节完成对勾描边动画 */
+@keyframes check-draw {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.check-draw path {
+  stroke-dasharray: 24;
+  animation: check-draw 0.4s var(--ease-apple) forwards;
+}
+
+/* 旋转加载 */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+/* 呼吸点（生成中状态） */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.8);
+  }
+}
+.pulse-dot {
+  animation: pulse-dot 1.2s var(--ease-apple) infinite;
+}
+
+/* 降低动效偏好降级 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

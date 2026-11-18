@@ -1,0 +1,29 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4A9FFF"/>
+      <stop offset="0.55" stop-color="#0A6CFF"/>
+      <stop offset="1" stop-color="#5E5CE6"/>
+    </linearGradient>
+    <linearGradient id="page" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EAF2FF"/>
+    </linearGradient>
+  </defs>
+  <!-- macOS 风格圆角矩形底板 -->
+  <rect x="82" y="82" width="860" height="860" rx="196" fill="url(#bg)"/>
+  <!-- 打开的书本 -->
+  <path d="M512 330 C440 288 340 272 262 284 C246 287 234 300 234 317 L234 664 C234 683 251 697 270 694 C344 683 440 697 512 738 C584 697 680 683 754 694 C773 697 790 683 790 664 L790 317 C790 300 778 287 762 284 C684 272 584 288 512 330 Z" fill="url(#page)"/>
+  <path d="M512 330 L512 738" stroke="#C9D8F2" stroke-width="14" stroke-linecap="round"/>
+  <!-- 书页文字线条 -->
+  <g stroke="#B9CDF0" stroke-width="16" stroke-linecap="round">
+    <path d="M300 380 C360 372 420 380 466 402"/>
+    <path d="M300 452 C360 444 420 452 466 474"/>
+    <path d="M300 524 C360 516 420 524 466 546"/>
+    <path d="M558 402 C604 380 664 372 724 380"/>
+    <path d="M558 474 C604 452 664 444 724 452"/>
+  </g>
+  <!-- AI 星芒 -->
+  <path d="M700 560 L722 616 L778 638 L722 660 L700 716 L678 660 L622 638 L678 616 Z" fill="#FFD60A"/>
+  <path d="M796 508 L806 534 L832 544 L806 554 L796 580 L786 554 L760 544 L786 534 Z" fill="#FFE566"/>
+</svg>

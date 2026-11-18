@@ -1,0 +1,12 @@
+node_modules
+dist
+.DS_Store
+*.local
+src-tauri/target
+src-tauri/gen/schemas
+scripts/app-icon.png
+
+# Trae 工作产物（开发计划文档、HTML 分享包、截图缓存）
+.trae/
+.trae-html-share-packages/
+.screenshots/

@@ -1,0 +1,227 @@
+/**
+ * 全局基础样式：重置、字体栈、滚动条、表单基础、Markdown 排版
+ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  user-select: none;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+/* 细滚动条（macOS 风格） */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* 通用文本输入框 */
+.app-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+  background: var(--bg-input);
+  outline: none;
+  transition: border-color var(--dur-fast) var(--ease-apple),
+    box-shadow var(--dur-fast) var(--ease-apple),
+    background var(--dur-fast) var(--ease-apple);
+  user-select: text;
+}
+.app-input:focus {
+  border-color: var(--accent);
+  background: var(--bg-elevated);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.app-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* 通用多行文本域 */
+.app-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+  background: var(--bg-input);
+  outline: none;
+  resize: vertical;
+  line-height: 1.7;
+  user-select: text;
+  transition: border-color var(--dur-fast) var(--ease-apple),
+    box-shadow var(--dur-fast) var(--ease-apple),
+    background var(--dur-fast) var(--ease-apple);
+}
+.app-textarea:focus {
+  border-color: var(--accent);
+  background: var(--bg-elevated);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.app-textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* 表单字段 */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.field-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.field-hint {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+/* Markdown 渲染排版 */
+.markdown-body {
+  user-select: text;
+  line-height: 1.85;
+  font-size: 14.5px;
+  word-break: break-word;
+}
+.markdown-body > *:first-child {
+  margin-top: 0;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4 {
+  margin: 1.4em 0 0.6em;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.markdown-body h1 {
+  font-size: 22px;
+  padding-bottom: 8px;
+  border-bottom: 0.5px solid var(--border);
+}
+.markdown-body h2 {
+  font-size: 18px;
+}
+.markdown-body h3 {
+  font-size: 16px;
+}
+.markdown-body h4 {
+  font-size: 14.5px;
+}
+.markdown-body p {
+  margin: 0.7em 0;
+}
+.markdown-body ul,
+.markdown-body ol {
+  margin: 0.7em 0;
+  padding-left: 1.6em;
+}
+.markdown-body li {
+  margin: 0.3em 0;
+}
+.markdown-body blockquote {
+  margin: 0.9em 0;
+  padding: 6px 14px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 0 8px 8px 0;
+  color: var(--text-secondary);
+}
+.markdown-body code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: var(--bg-input);
+}
+.markdown-body pre {
+  margin: 0.9em 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--bg-input);
+  overflow-x: auto;
+}
+.markdown-body pre code {
+  padding: 0;
+  background: none;
+}
+.markdown-body hr {
+  margin: 1.4em 0;
+  border: none;
+  border-top: 0.5px solid var(--border-strong);
+}
+.markdown-body table {
+  margin: 0.9em 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+.markdown-body th,
+.markdown-body td {
+  padding: 6px 12px;
+  border: 0.5px solid var(--border-strong);
+  text-align: left;
+}
+.markdown-body th {
+  background: var(--bg-input);
+  font-weight: 600;
+}
+.markdown-body strong {
+  font-weight: 700;
+}
