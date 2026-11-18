@@ -12,6 +12,12 @@
 [![status](https://img.shields.io/badge/status-active-brightgreen.svg)](#)
 [![stars](https://img.shields.io/github/stars/NovelWritingAgent/NovelWritingAgent?style=social)](#)
 
+[![Download macOS](https://img.shields.io/badge/⬇_Download-macOS-blue)](https://github.com/ruiweitang/NovelWritingAgent/releases/latest)
+[![Download Windows](https://img.shields.io/badge/⬇_Download-Windows-2ea44f)](https://github.com/ruiweitang/NovelWritingAgent/releases/latest)
+
+📥 **下载安装包 · Get the app**：前往 [Releases](https://github.com/ruiweitang/NovelWritingAgent/releases) 获取 macOS（`.dmg`）与 Windows（`.msi` / `.exe`）安装包。
+Head to [Releases](https://github.com/ruiweitang/NovelWritingAgent/releases) for macOS (`.dmg`) and Windows (`.msi` / `.exe`) installers.
+
 把灵感变成完整作品 —— 从一句话构思到章节成稿，七个环节层层推进，每一稿都可回溯、可调整、可确认。
 Turn a spark of an idea into a finished work — from a one-line premise to polished chapters, guided by a seven-stage pipeline where every draft is reversible, adjustable, and confirmable.
 
@@ -86,6 +92,16 @@ Markdown edit/preview modes, system-aware light/dark theme, immersive macOS over
 ---
 
 ## 🚀 快速开始 · Getting Started
+
+### 📦 直接安装 · Install the app
+不想折腾环境？到 [Releases](https://github.com/ruiweitang/NovelWritingAgent/releases) 下载即可：
+- 🍎 **macOS**：`.dmg`（拖入 Applications）
+- 🪟 **Windows**：`.msi` 或 `_setup.exe`
+
+> 安装包暂未做代码签名：macOS 首次打开请右键 → “打开”；Windows 若弹 SmartScreen，点 “More info → Run anyway”。
+> Builds are unsigned. macOS: right-click → Open on first launch. Windows: SmartScreen → More info → Run anyway.
+
+### 从源码运行 · Run from source
 
 ### 环境依赖 · Prerequisites
 - [Node.js](https://nodejs.org) 18+ 与 [pnpm](https://pnpm.io)
